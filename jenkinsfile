@@ -4,11 +4,11 @@ pipeline {
        maven 'maven'
     }
     stages {
-        stage ('cleanWS') {
-            steps {
-              cleanWs()
-           }
-        }
+        // stage ('cleanWS') {
+        //     steps {
+        //       cleanWs()
+        //    }
+        // }
         stage ('compile') {
             steps {
                 sh 'mvn compile'
