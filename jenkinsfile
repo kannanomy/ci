@@ -1,26 +1,26 @@
 pipeline {
     agent any
     tools {
-        maven 'maven'
+       maven 'maven'
     }
     stages {
         stage ('cleanWS') {
-            step {
-                cleanWS()
+            steps {
+              cleanWS()
            }
         }
         stage ('compile') {
-            step {
+            steps {
                 sh 'mvn compile'
             }
         }
         stage ('test') {
-            step {
+            steps {
                 sh 'test'
             }
         }
         stage ('unit test') {
-            step {
+            steps {
                 sh 'mvn test'
             }
         }
