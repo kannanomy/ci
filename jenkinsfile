@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    tools {
+        maven 'maven'
+    }
+    stages {
+        stage ('cleanWS') {
+            step {
+                cleanWS()
+           }
+        }
+        stage ('compile') {
+            step {
+                sh 'mvn compile'
+            }
+        }
+        stage ('test') {
+            step {
+                sh 'test'
+            }
+        }
+        stage ('unit test') {
+            step {
+                sh 'mvn test'
+            }
+        }
+    }  
+}
+
+     
