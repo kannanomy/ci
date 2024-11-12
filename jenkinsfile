@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage ('cleanWS') {
             steps {
-              cleanWS()
+              cleanWs()
            }
         }
         stage ('compile') {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage ('test') {
             steps {
-                sh 'test'
+                sh 'mvn test'
             }
         }
         stage ('unit test') {
